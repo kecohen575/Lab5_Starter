@@ -20,7 +20,7 @@ function init() {
   const volume_slider = document.getElementById("volume");
 
   // volume slider sets corresponding audio volume and icon
-  volume_slider.addEventListener('change', (event) => {
+  volume_slider.addEventListener('input', (event) => {
     const vol = event.target.value;
     audio.volume = Number(vol) / 100;
     if (vol == 0) {
