@@ -1,5 +1,12 @@
 # Lab 5 - Starter
-Make sure you make a PR to your own repo's main and not the class' repo!! Otherwise you will lose points!!
 
-Kevin Cohen
+Kevin Cohen,
 JP Davalos
+
+### Live Demo  
+- [Party Horn](https://kecohen575.github.io/Lab5_Starter/expose.html)  
+- [Speech Synthesis](https://kecohen575.github.io/Lab5_Starter/explore.html)
+
+<!-- Is above better than the following?
+[Link to [Party Horn](expose.html)]
+[Link to [Explore](explore.html)] -->
