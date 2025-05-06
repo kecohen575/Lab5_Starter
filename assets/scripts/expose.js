@@ -40,4 +40,17 @@ function init() {
       volume_icon.alt = `level-3 volume icon`;
     }
   })
+
+
+  const jsConfetti = new JSConfetti()
+  const play_btn = document.querySelector('#expose button')
+
+  // play sound button plays corresponding audio (+ a surprise)
+  play_btn.addEventListener('click', () => {
+    audio.play()
+    
+    const horn_type = horn_btn.value;
+    if (horn_type === 'select') { alert("Please select horn type"); }
+    if (horn_type === 'party-horn') { jsConfetti.addConfetti(); }
+  })
 }
