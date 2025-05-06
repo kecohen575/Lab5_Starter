@@ -15,4 +15,29 @@ function init() {
     audio.src = `assets/audio/${choice}.mp3`;
   });
 
+  
+  const volume_icon = document.querySelector('img[src="assets/icons/volume-level-2.svg"]');
+  const volume_slider = document.getElementById("volume");
+
+  // volume slider sets corresponding audio volume and icon
+  volume_slider.addEventListener('change', (event) => {
+    const vol = event.target.value;
+    audio.volume = Number(vol) / 100;
+    if (vol == 0) {
+      volume_icon.src = `assets/icons/volume-level-0.svg`;
+      volume_icon.alt = `mute volume icon`;
+    }
+    else if (vol <= 33) {
+      volume_icon.src = `assets/icons/volume-level-1.svg`;
+      volume_icon.alt = `level-1 volume icon`;
+    }
+    else if (vol <= 67) {
+      volume_icon.src = `assets/icons/volume-level-2.svg`;
+      volume_icon.alt = `level-2 volume icon`;
+    }
+    else {
+      volume_icon.src = `assets/icons/volume-level-3.svg`;
+      volume_icon.alt = `level-3 volume icon`;
+    }
+  })
 }
