@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 const inputTxt = document.querySelector("#text-to-speak");
 const voiceSelect = document.getElementById("voice-select");
+const faceImg = document.querySelector("#explore img");
 
 let voices = [];
 
@@ -56,6 +57,11 @@ function speak() {
     const selectedOption =
       voiceSelect.selectedOptions[0].getAttribute("data-name");
 
+    faceImg.src = "assets/images/smiling-open.png";
+
+    utterThis.onend = () => {
+      faceImg.src = "assets/images/smiling.png";
+    };
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === selectedOption) {
         utterThis.voice = voices[i];
