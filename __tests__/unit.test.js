@@ -51,3 +51,31 @@ test("Expect no to NOT be a strong password", () => {
 test("Expect blahblahblahblah to NOT be a strong password", () => {
   expect(isStrongPassword("blahblahblahblah")).toBe(false);
 });
+
+//Testing isDate
+test("Expect 11/30/2024 to be a valid date", () => {
+  expect(isDate("11/30/2024")).toBe(true);
+});
+test("Expect 99/99/9999 to be a valid date", () => {
+  expect(isDate("99/99/9999")).toBe(true);
+});
+test("Expect 1/1/1 to NOT be a valid date", () => {
+  expect(isDate("1/1/1")).toBe(false);
+});
+test("Expect aa/aa/bbbb to NOT be a valid date", () => {
+  expect(isDate("aa/aa/bbbb")).toBe(false);
+});
+
+// Testing isHexColor
+test("Expect #FF11BB to be a valid hex color", () => {
+  expect(isHexColor("#FF11BB")).toBe(true);
+});
+test("Expect #000000 to be a valid hex color", () => {
+  expect(isHexColor("#000000")).toBe(true);
+});
+test("Expect #0000 to NOT be a valid hex color", () => {
+  expect(isHexColor("#0000")).toBe(false);
+});
+test("Expect #a to NOT be a valid hex color", () => {
+  expect(isHexColor("#a")).toBe(false);
+});
